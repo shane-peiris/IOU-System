@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9639fc9a9c3648818ee5bb898dc65392" Name="Diagram1" ZoomLevel="48">
+        <EntityTypeShape EntityType="BBDOIOUModel.Activity" Width="1.5" PointX="12" PointY="15.625" />
+        <EntityTypeShape EntityType="BBDOIOUModel.AsignedJob" Width="1.5" PointX="14.25" PointY="9.375" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CompanyRole" Width="1.5" PointX="7.5" PointY="18" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CostCategory" Width="1.5" PointX="12.75" PointY="1.75" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CostElement" Width="1.5" PointX="15" PointY="1.625" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Country" Width="1.5" PointX="6.25" PointY="2.75" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Currency" Width="1.5" PointX="15" PointY="17.875" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CustomerAddress" Width="1.5" PointX="9.75" PointY="0.625" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CustomerBrand" Width="1.5" PointX="9.75" PointY="12.75" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CustomerContactInfo" Width="1.5" PointX="9.75" PointY="9" />
+        <EntityTypeShape EntityType="BBDOIOUModel.CustomerContactPerson" Width="1.5" PointX="9.75" PointY="5.375" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Customer" Width="1.5" PointX="7.5" PointY="6" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Department" Width="1.5" PointX="5.25" PointY="19.75" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Designation" Width="1.5" PointX="5.25" PointY="16.875" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Employee" Width="1.5" PointX="9.75" PointY="17.25" />
+        <EntityTypeShape EntityType="BBDOIOUModel.EmployeeAddress" Width="1.5" PointX="12" PointY="22.875" />
+        <EntityTypeShape EntityType="BBDOIOUModel.EmployeeContact" Width="1.5" PointX="12" PointY="19" />
+        <EntityTypeShape EntityType="BBDOIOUModel.EmployeeType" Width="1.5" PointX="7.5" PointY="22.375" />
+        <EntityTypeShape EntityType="BBDOIOUModel.JobCosting" Width="1.5" PointX="17.25" PointY="3.875" />
+        <EntityTypeShape EntityType="BBDOIOUModel.JobInvoiceDetail" Width="1.5" PointX="14.25" PointY="5.125" />
+        <EntityTypeShape EntityType="BBDOIOUModel.JobPaymentsDetail" Width="1.5" PointX="14.25" PointY="29.375" />
+        <EntityTypeShape EntityType="BBDOIOUModel.JobPODetail" Width="1.5" PointX="14.25" PointY="25.625" />
+        <EntityTypeShape EntityType="BBDOIOUModel.Job" Width="1.5" PointX="12" PointY="7.5" />
+        <EntityTypeShape EntityType="BBDOIOUModel.JobsEstimate" Width="1.5" PointX="17.25" PointY="8.75" />
+        <EntityTypeShape EntityType="BBDOIOUModel.jobState" Width="1.5" PointX="9.75" PointY="25" />
+        <EntityTypeShape EntityType="BBDOIOUModel.JobsTimeRecoding" Width="1.5" PointX="14.25" PointY="13" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobsTimeRecoding_ActivityID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_AsignedJobs_EmployeeID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_AsignedJobs_JobID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CompanyRole_DepartmentID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CompanyRole_DesignationID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Employees_RoleID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CostElement_CategoryID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobCosting_CostElementID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobsEstimate_CurrencyID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CustomerAddress_CustomerID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CustomerBrands_CustomerID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Jobs_BrandID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CustomerContactInfo_CustomerID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_CustomerContactPersons_CustomerID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Jobs_CustomerID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Employee_DepartmentID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Employee_DesignationID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Employee_EmployeeTypeID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_EmployeeAddress_EmployeeID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_EmployeeContact_EmployeeID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Jobs_ProceedBy" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobsEstimate_AprovedBy" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobsTimeRecoding_EmployeeID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobCosting_JobID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobInvoiceDetails_JobID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobPaymentsDetails_JobID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobPODetails_JobID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_Jobs_jobStateID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobsEstimate_JobID" />
+        <AssociationConnector Association="BBDOIOUModel.fk_JobsTimeRecoding_JobID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

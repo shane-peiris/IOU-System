@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BBDOIOUModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BBDOIOUEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Activities" EntityType="BBDOIOUModel.Activity" />
+    <EntitySet Name="AsignedJobs" EntityType="BBDOIOUModel.AsignedJob" />
+    <EntitySet Name="CompanyRoles" EntityType="BBDOIOUModel.CompanyRole" />
+    <EntitySet Name="CostCategories" EntityType="BBDOIOUModel.CostCategory" />
+    <EntitySet Name="CostElements" EntityType="BBDOIOUModel.CostElement" />
+    <EntitySet Name="Countries" EntityType="BBDOIOUModel.Country" />
+    <EntitySet Name="Currencies" EntityType="BBDOIOUModel.Currency" />
+    <EntitySet Name="CustomerAddresses" EntityType="BBDOIOUModel.CustomerAddress" />
+    <EntitySet Name="CustomerBrands" EntityType="BBDOIOUModel.CustomerBrand" />
+    <EntitySet Name="CustomerContactInfoes" EntityType="BBDOIOUModel.CustomerContactInfo" />
+    <EntitySet Name="CustomerContactPersons" EntityType="BBDOIOUModel.CustomerContactPerson" />
+    <EntitySet Name="Customers" EntityType="BBDOIOUModel.Customer" />
+    <EntitySet Name="Departments" EntityType="BBDOIOUModel.Department" />
+    <EntitySet Name="Designations" EntityType="BBDOIOUModel.Designation" />
+    <EntitySet Name="Employees" EntityType="BBDOIOUModel.Employee" />
+    <EntitySet Name="EmployeeAddresses" EntityType="BBDOIOUModel.EmployeeAddress" />
+    <EntitySet Name="EmployeeContacts" EntityType="BBDOIOUModel.EmployeeContact" />
+    <EntitySet Name="EmployeeTypes" EntityType="BBDOIOUModel.EmployeeType" />
+    <EntitySet Name="JobCostings" EntityType="BBDOIOUModel.JobCosting" />
+    <EntitySet Name="JobInvoiceDetails" EntityType="BBDOIOUModel.JobInvoiceDetail" />
+    <EntitySet Name="JobPaymentsDetails" EntityType="BBDOIOUModel.JobPaymentsDetail" />
+    <EntitySet Name="JobPODetails" EntityType="BBDOIOUModel.JobPODetail" />
+    <EntitySet Name="Jobs" EntityType="BBDOIOUModel.Job" />
+    <EntitySet Name="JobsEstimates" EntityType="BBDOIOUModel.JobsEstimate" />
+    <EntitySet Name="jobStates" EntityType="BBDOIOUModel.jobState" />
+    <EntitySet Name="JobsTimeRecodings" EntityType="BBDOIOUModel.JobsTimeRecoding" />
+    <AssociationSet Name="fk_JobsTimeRecoding_ActivityID" Association="BBDOIOUModel.fk_JobsTimeRecoding_ActivityID">
+      <End Role="Activity" EntitySet="Activities" />
+      <End Role="JobsTimeRecoding" EntitySet="JobsTimeRecodings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AsignedJobs_EmployeeID" Association="BBDOIOUModel.fk_AsignedJobs_EmployeeID">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="AsignedJob" EntitySet="AsignedJobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AsignedJobs_JobID" Association="BBDOIOUModel.fk_AsignedJobs_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="AsignedJob" EntitySet="AsignedJobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CompanyRole_DepartmentID" Association="BBDOIOUModel.fk_CompanyRole_DepartmentID">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="CompanyRole" EntitySet="CompanyRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CompanyRole_DesignationID" Association="BBDOIOUModel.fk_CompanyRole_DesignationID">
+      <End Role="Designation" EntitySet="Designations" />
+      <End Role="CompanyRole" EntitySet="CompanyRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employees_RoleID" Association="BBDOIOUModel.fk_Employees_RoleID">
+      <End Role="CompanyRole" EntitySet="CompanyRoles" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CostElement_CategoryID" Association="BBDOIOUModel.fk_CostElement_CategoryID">
+      <End Role="CostCategory" EntitySet="CostCategories" />
+      <End Role="CostElement" EntitySet="CostElements" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobCosting_CostElementID" Association="BBDOIOUModel.fk_JobCosting_CostElementID">
+      <End Role="CostElement" EntitySet="CostElements" />
+      <End Role="JobCosting" EntitySet="JobCostings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsEstimate_CurrencyID" Association="BBDOIOUModel.fk_JobsEstimate_CurrencyID">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="JobsEstimate" EntitySet="JobsEstimates" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerAddress_CustomerID" Association="BBDOIOUModel.fk_CustomerAddress_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerBrands_CustomerID" Association="BBDOIOUModel.fk_CustomerBrands_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerBrand" EntitySet="CustomerBrands" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_BrandID" Association="BBDOIOUModel.fk_Jobs_BrandID">
+      <End Role="CustomerBrand" EntitySet="CustomerBrands" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerContactInfo_CustomerID" Association="BBDOIOUModel.fk_CustomerContactInfo_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerContactInfo" EntitySet="CustomerContactInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerContactPersons_CustomerID" Association="BBDOIOUModel.fk_CustomerContactPersons_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerContactPerson" EntitySet="CustomerContactPersons" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_CustomerID" Association="BBDOIOUModel.fk_Jobs_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employee_DepartmentID" Association="BBDOIOUModel.fk_Employee_DepartmentID">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employee_DesignationID" Association="BBDOIOUModel.fk_Employee_DesignationID">
+      <End Role="Designation" EntitySet="Designations" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employee_EmployeeTypeID" Association="BBDOIOUModel.fk_Employee_EmployeeTypeID">
+      <End Role="EmployeeType" EntitySet="EmployeeTypes" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeAddress_EmployeeID" Association="BBDOIOUModel.fk_EmployeeAddress_EmployeeID">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeAddress" EntitySet="EmployeeAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeContact_EmployeeID" Association="BBDOIOUModel.fk_EmployeeContact_EmployeeID">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeContact" EntitySet="EmployeeContacts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_ProceedBy" Association="BBDOIOUModel.fk_Jobs_ProceedBy">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsEstimate_AprovedBy" Association="BBDOIOUModel.fk_JobsEstimate_AprovedBy">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="JobsEstimate" EntitySet="JobsEstimates" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsTimeRecoding_EmployeeID" Association="BBDOIOUModel.fk_JobsTimeRecoding_EmployeeID">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="JobsTimeRecoding" EntitySet="JobsTimeRecodings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobCosting_JobID" Association="BBDOIOUModel.fk_JobCosting_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobCosting" EntitySet="JobCostings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobInvoiceDetails_JobID" Association="BBDOIOUModel.fk_JobInvoiceDetails_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobInvoiceDetail" EntitySet="JobInvoiceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobPaymentsDetails_JobID" Association="BBDOIOUModel.fk_JobPaymentsDetails_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobPaymentsDetail" EntitySet="JobPaymentsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobPODetails_JobID" Association="BBDOIOUModel.fk_JobPODetails_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobPODetail" EntitySet="JobPODetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_jobStateID" Association="BBDOIOUModel.fk_Jobs_jobStateID">
+      <End Role="jobState" EntitySet="jobStates" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsEstimate_JobID" Association="BBDOIOUModel.fk_JobsEstimate_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobsEstimate" EntitySet="JobsEstimates" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsTimeRecoding_JobID" Association="BBDOIOUModel.fk_JobsTimeRecoding_JobID">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobsTimeRecoding" EntitySet="JobsTimeRecodings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="JobsTimeRecodings" Relationship="BBDOIOUModel.fk_JobsTimeRecoding_ActivityID" FromRole="Activity" ToRole="JobsTimeRecoding" />
+  </EntityType>
+  <EntityType Name="AsignedJob">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="DateofAssigned" Type="DateTime" Precision="3" />
+    <Property Name="AssignedBy" Type="Int32" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="BBDOIOUModel.fk_AsignedJobs_EmployeeID" FromRole="AsignedJob" ToRole="Employee" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_AsignedJobs_JobID" FromRole="AsignedJob" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="CompanyRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignationID" Type="Int32" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="Roles" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Department" Relationship="BBDOIOUModel.fk_CompanyRole_DepartmentID" FromRole="CompanyRole" ToRole="Department" />
+    <NavigationProperty Name="Designation" Relationship="BBDOIOUModel.fk_CompanyRole_DesignationID" FromRole="CompanyRole" ToRole="Designation" />
+    <NavigationProperty Name="Employees" Relationship="BBDOIOUModel.fk_Employees_RoleID" FromRole="CompanyRole" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="CostElements" Relationship="BBDOIOUModel.fk_CostElement_CategoryID" FromRole="CostCategory" ToRole="CostElement" />
+  </EntityType>
+  <EntityType Name="CostElement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="CostCategory" Relationship="BBDOIOUModel.fk_CostElement_CategoryID" FromRole="CostElement" ToRole="CostCategory" />
+    <NavigationProperty Name="JobCostings" Relationship="BBDOIOUModel.fk_JobCosting_CostElementID" FromRole="CostElement" ToRole="JobCosting" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="JobsEstimates" Relationship="BBDOIOUModel.fk_JobsEstimate_CurrencyID" FromRole="Currency" ToRole="JobsEstimate" />
+  </EntityType>
+  <EntityType Name="CustomerAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Street1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Street2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Street3" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="BBDOIOUModel.fk_CustomerAddress_CustomerID" FromRole="CustomerAddress" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="CustomerBrand">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="BBDOIOUModel.fk_CustomerBrands_CustomerID" FromRole="CustomerBrand" ToRole="Customer" />
+    <NavigationProperty Name="Jobs" Relationship="BBDOIOUModel.fk_Jobs_BrandID" FromRole="CustomerBrand" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="CustomerContactInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Telophone1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Telophone2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Web" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="BBDOIOUModel.fk_CustomerContactInfo_CustomerID" FromRole="CustomerContactInfo" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="CustomerContactPerson">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Telophone1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customer" Relationship="BBDOIOUModel.fk_CustomerContactPersons_CustomerID" FromRole="CustomerContactPerson" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CreditLimit" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <Property Name="CreditPeriod" Type="Int32" />
+    <Property Name="BusinessRegNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VatRegNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NBTRegNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="AddressNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AddressStreet1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AddressStreet2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AddressCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CustomerAddresses" Relationship="BBDOIOUModel.fk_CustomerAddress_CustomerID" FromRole="Customer" ToRole="CustomerAddress" />
+    <NavigationProperty Name="CustomerBrands" Relationship="BBDOIOUModel.fk_CustomerBrands_CustomerID" FromRole="Customer" ToRole="CustomerBrand" />
+    <NavigationProperty Name="CustomerContactInfoes" Relationship="BBDOIOUModel.fk_CustomerContactInfo_CustomerID" FromRole="Customer" ToRole="CustomerContactInfo" />
+    <NavigationProperty Name="CustomerContactPersons" Relationship="BBDOIOUModel.fk_CustomerContactPersons_CustomerID" FromRole="Customer" ToRole="CustomerContactPerson" />
+    <NavigationProperty Name="Jobs" Relationship="BBDOIOUModel.fk_Jobs_CustomerID" FromRole="Customer" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CompanyRoles" Relationship="BBDOIOUModel.fk_CompanyRole_DepartmentID" FromRole="Department" ToRole="CompanyRole" />
+    <NavigationProperty Name="Employees" Relationship="BBDOIOUModel.fk_Employee_DepartmentID" FromRole="Department" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="CompanyRoles" Relationship="BBDOIOUModel.fk_CompanyRole_DesignationID" FromRole="Designation" ToRole="CompanyRole" />
+    <NavigationProperty Name="Employees" Relationship="BBDOIOUModel.fk_Employee_DesignationID" FromRole="Designation" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EMPNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EPFNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InitialName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SurName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NameWithInitial" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="3" />
+    <Property Name="IDnumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="DesignationID" Type="Int32" />
+    <Property Name="EmployeeTypeID" Type="Int32" />
+    <Property Name="WorkingHours" Type="Decimal" Precision="26" Scale="2" />
+    <Property Name="HourlyRate" Type="Decimal" Precision="26" Scale="2" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <NavigationProperty Name="AsignedJobs" Relationship="BBDOIOUModel.fk_AsignedJobs_EmployeeID" FromRole="Employee" ToRole="AsignedJob" />
+    <NavigationProperty Name="CompanyRole" Relationship="BBDOIOUModel.fk_Employees_RoleID" FromRole="Employee" ToRole="CompanyRole" />
+    <NavigationProperty Name="Department" Relationship="BBDOIOUModel.fk_Employee_DepartmentID" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="Designation" Relationship="BBDOIOUModel.fk_Employee_DesignationID" FromRole="Employee" ToRole="Designation" />
+    <NavigationProperty Name="EmployeeType" Relationship="BBDOIOUModel.fk_Employee_EmployeeTypeID" FromRole="Employee" ToRole="EmployeeType" />
+    <NavigationProperty Name="EmployeeAddresses" Relationship="BBDOIOUModel.fk_EmployeeAddress_EmployeeID" FromRole="Employee" ToRole="EmployeeAddress" />
+    <NavigationProperty Name="EmployeeContacts" Relationship="BBDOIOUModel.fk_EmployeeContact_EmployeeID" FromRole="Employee" ToRole="EmployeeContact" />
+    <NavigationProperty Name="Jobs" Relationship="BBDOIOUModel.fk_Jobs_ProceedBy" FromRole="Employee" ToRole="Job" />
+    <NavigationProperty Name="JobsEstimates" Relationship="BBDOIOUModel.fk_JobsEstimate_AprovedBy" FromRole="Employee" ToRole="JobsEstimate" />
+    <NavigationProperty Name="JobsTimeRecodings" Relationship="BBDOIOUModel.fk_JobsTimeRecoding_EmployeeID" FromRole="Employee" ToRole="JobsTimeRecoding" />
+  </EntityType>
+  <EntityType Name="EmployeeAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ResidenceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Street1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Street2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Street3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Contry" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ZibCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="BBDOIOUModel.fk_EmployeeAddress_EmployeeID" FromRole="EmployeeAddress" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="EmployeeContact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="TelephneNo1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TelephneNo2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="WebLink" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="BBDOIOUModel.fk_EmployeeContact_EmployeeID" FromRole="EmployeeContact" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Employees" Relationship="BBDOIOUModel.fk_Employee_EmployeeTypeID" FromRole="EmployeeType" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="JobCosting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="CostElementID" Type="Int32" />
+    <Property Name="DateOfRecord" Type="DateTime" Precision="3" />
+    <Property Name="PVNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Payee" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descriptions" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Cost" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <Property Name="Claimable" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="RecordBy" Type="Int32" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="CostElement" Relationship="BBDOIOUModel.fk_JobCosting_CostElementID" FromRole="JobCosting" ToRole="CostElement" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_JobCosting_JobID" FromRole="JobCosting" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="JobInvoiceDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="POBy" Type="Int32" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="PaidAmount" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_JobInvoiceDetails_JobID" FromRole="JobInvoiceDetail" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="JobPaymentsDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="ReceiptNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="Method" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BankTransferRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeBank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="POBy" Type="Int32" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="PaidAmount" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_JobPaymentsDetails_JobID" FromRole="JobPaymentsDetail" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="JobPODetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="PONumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PODate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="POBy" Type="Int32" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="POAmount" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_JobPODetails_JobID" FromRole="JobPODetail" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="JobNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JobDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="JobType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProceedBy" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="JobStateID" Type="Int32" />
+    <Property Name="JobActiveDate" Type="DateTime" Precision="3" />
+    <Property Name="ToalHoursTaken" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <Property Name="ActualCloseDate" Type="DateTime" Precision="3" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="JobCreateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AsignedJobs" Relationship="BBDOIOUModel.fk_AsignedJobs_JobID" FromRole="Job" ToRole="AsignedJob" />
+    <NavigationProperty Name="CustomerBrand" Relationship="BBDOIOUModel.fk_Jobs_BrandID" FromRole="Job" ToRole="CustomerBrand" />
+    <NavigationProperty Name="Customer" Relationship="BBDOIOUModel.fk_Jobs_CustomerID" FromRole="Job" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="BBDOIOUModel.fk_Jobs_ProceedBy" FromRole="Job" ToRole="Employee" />
+    <NavigationProperty Name="JobCostings" Relationship="BBDOIOUModel.fk_JobCosting_JobID" FromRole="Job" ToRole="JobCosting" />
+    <NavigationProperty Name="JobInvoiceDetails" Relationship="BBDOIOUModel.fk_JobInvoiceDetails_JobID" FromRole="Job" ToRole="JobInvoiceDetail" />
+    <NavigationProperty Name="JobPaymentsDetails" Relationship="BBDOIOUModel.fk_JobPaymentsDetails_JobID" FromRole="Job" ToRole="JobPaymentsDetail" />
+    <NavigationProperty Name="JobPODetails" Relationship="BBDOIOUModel.fk_JobPODetails_JobID" FromRole="Job" ToRole="JobPODetail" />
+    <NavigationProperty Name="jobState" Relationship="BBDOIOUModel.fk_Jobs_jobStateID" FromRole="Job" ToRole="jobState" />
+    <NavigationProperty Name="JobsEstimates" Relationship="BBDOIOUModel.fk_JobsEstimate_JobID" FromRole="Job" ToRole="JobsEstimate" />
+    <NavigationProperty Name="JobsTimeRecodings" Relationship="BBDOIOUModel.fk_JobsTimeRecoding_JobID" FromRole="Job" ToRole="JobsTimeRecoding" />
+  </EntityType>
+  <EntityType Name="JobsEstimate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="EstimateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfEstimate" Type="DateTime" Precision="3" />
+    <Property Name="CurrencyID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AprovedBy" Type="Int32" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <Property Name="CurrancyRate" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <Property Name="AmountLKR" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <NavigationProperty Name="Currency" Relationship="BBDOIOUModel.fk_JobsEstimate_CurrencyID" FromRole="JobsEstimate" ToRole="Currency" />
+    <NavigationProperty Name="Employee" Relationship="BBDOIOUModel.fk_JobsEstimate_AprovedBy" FromRole="JobsEstimate" ToRole="Employee" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_JobsEstimate_JobID" FromRole="JobsEstimate" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="jobState">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Jobs" Relationship="BBDOIOUModel.fk_Jobs_jobStateID" FromRole="jobState" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="JobsTimeRecoding">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ActivityID" Type="Int32" />
+    <Property Name="Statues" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfRecord" Type="DateTime" Precision="3" />
+    <Property Name="TimeTaken" Type="Decimal" Nullable="false" Precision="26" Scale="2" />
+    <Property Name="Coments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dt_lmd" Type="DateTime" Precision="3" />
+    <Property Name="modify_By" Type="Int32" />
+    <NavigationProperty Name="Activity" Relationship="BBDOIOUModel.fk_JobsTimeRecoding_ActivityID" FromRole="JobsTimeRecoding" ToRole="Activity" />
+    <NavigationProperty Name="Employee" Relationship="BBDOIOUModel.fk_JobsTimeRecoding_EmployeeID" FromRole="JobsTimeRecoding" ToRole="Employee" />
+    <NavigationProperty Name="Job" Relationship="BBDOIOUModel.fk_JobsTimeRecoding_JobID" FromRole="JobsTimeRecoding" ToRole="Job" />
+  </EntityType>
+  <Association Name="fk_JobsTimeRecoding_ActivityID">
+    <End Type="BBDOIOUModel.Activity" Role="Activity" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobsTimeRecoding" Role="JobsTimeRecoding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsTimeRecoding">
+        <PropertyRef Name="ActivityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AsignedJobs_EmployeeID">
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.AsignedJob" Role="AsignedJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AsignedJob">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AsignedJobs_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.AsignedJob" Role="AsignedJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AsignedJob">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CompanyRole_DepartmentID">
+    <End Type="BBDOIOUModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CompanyRole" Role="CompanyRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyRole">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CompanyRole_DesignationID">
+    <End Type="BBDOIOUModel.Designation" Role="Designation" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CompanyRole" Role="CompanyRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyRole">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employees_RoleID">
+    <End Type="BBDOIOUModel.CompanyRole" Role="CompanyRole" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CostElement_CategoryID">
+    <End Type="BBDOIOUModel.CostCategory" Role="CostCategory" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CostElement" Role="CostElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CostElement">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobCosting_CostElementID">
+    <End Type="BBDOIOUModel.CostElement" Role="CostElement" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobCosting" Role="JobCosting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostElement">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobCosting">
+        <PropertyRef Name="CostElementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsEstimate_CurrencyID">
+    <End Type="BBDOIOUModel.Currency" Role="Currency" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobsEstimate" Role="JobsEstimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsEstimate">
+        <PropertyRef Name="CurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerAddress_CustomerID">
+    <End Type="BBDOIOUModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CustomerAddress" Role="CustomerAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerAddress">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerBrands_CustomerID">
+    <End Type="BBDOIOUModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CustomerBrand" Role="CustomerBrand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerBrand">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_BrandID">
+    <End Type="BBDOIOUModel.CustomerBrand" Role="CustomerBrand" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerBrand">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerContactInfo_CustomerID">
+    <End Type="BBDOIOUModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CustomerContactInfo" Role="CustomerContactInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerContactInfo">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerContactPersons_CustomerID">
+    <End Type="BBDOIOUModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.CustomerContactPerson" Role="CustomerContactPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerContactPerson">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_CustomerID">
+    <End Type="BBDOIOUModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employee_DepartmentID">
+    <End Type="BBDOIOUModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employee_DesignationID">
+    <End Type="BBDOIOUModel.Designation" Role="Designation" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employee_EmployeeTypeID">
+    <End Type="BBDOIOUModel.EmployeeType" Role="EmployeeType" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmployeeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeAddress_EmployeeID">
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.EmployeeAddress" Role="EmployeeAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeAddress">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeContact_EmployeeID">
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.EmployeeContact" Role="EmployeeContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeContact">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_ProceedBy">
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="ProceedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsEstimate_AprovedBy">
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobsEstimate" Role="JobsEstimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsEstimate">
+        <PropertyRef Name="AprovedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsTimeRecoding_EmployeeID">
+    <End Type="BBDOIOUModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobsTimeRecoding" Role="JobsTimeRecoding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsTimeRecoding">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobCosting_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobCosting" Role="JobCosting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobCosting">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobInvoiceDetails_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobInvoiceDetail" Role="JobInvoiceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobInvoiceDetail">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobPaymentsDetails_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobPaymentsDetail" Role="JobPaymentsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobPaymentsDetail">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobPODetails_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobPODetail" Role="JobPODetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobPODetail">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_jobStateID">
+    <End Type="BBDOIOUModel.jobState" Role="jobState" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jobState">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="JobStateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsEstimate_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobsEstimate" Role="JobsEstimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsEstimate">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsTimeRecoding_JobID">
+    <End Type="BBDOIOUModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="BBDOIOUModel.JobsTimeRecoding" Role="JobsTimeRecoding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsTimeRecoding">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

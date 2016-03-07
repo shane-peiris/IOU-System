@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BBDOIOUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Activities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="Description" Type="varchar" MaxLength="300" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="AsignedJobs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="DateofAssigned" Type="datetime" />
+    <Property Name="AssignedBy" Type="int" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="CompanyRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignationID" Type="int" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="Roles" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="CostElements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="20" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="5" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CustomerAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Number" Type="varchar" MaxLength="50" />
+    <Property Name="Street1" Type="varchar" MaxLength="250" />
+    <Property Name="Street2" Type="varchar" MaxLength="250" />
+    <Property Name="Street3" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="250" />
+    <Property Name="Country" Type="varchar" MaxLength="250" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerBrands">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerContactInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Telophone1" Type="varchar" MaxLength="20" />
+    <Property Name="Telophone2" Type="varchar" MaxLength="20" />
+    <Property Name="FaxNo" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Web" Type="varchar" MaxLength="150" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerContactPersons">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Telophone1" Type="varchar" MaxLength="20" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="25" />
+    <Property Name="Name" Type="varchar" MaxLength="300" />
+    <Property Name="CreditLimit" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+    <Property Name="CreditPeriod" Type="int" />
+    <Property Name="BusinessRegNo" Type="varchar" MaxLength="100" />
+    <Property Name="VatRegNo" Type="varchar" MaxLength="100" />
+    <Property Name="NBTRegNo" Type="varchar" MaxLength="100" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="AddressNo" Type="varchar" MaxLength="100" />
+    <Property Name="AddressStreet1" Type="varchar" MaxLength="100" />
+    <Property Name="AddressStreet2" Type="varchar" MaxLength="100" />
+    <Property Name="AddressCity" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Designations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="200" />
+    <Property Name="EMPNo" Type="varchar" MaxLength="50" />
+    <Property Name="EPFNo" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="InitialName" Type="varchar" MaxLength="250" />
+    <Property Name="SurName" Type="varchar" MaxLength="250" />
+    <Property Name="OtherName" Type="varchar" MaxLength="250" />
+    <Property Name="NameWithInitial" Type="varchar" MaxLength="250" />
+    <Property Name="DateofBirth" Type="datetime" />
+    <Property Name="IDnumber" Type="varchar" MaxLength="15" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="DesignationID" Type="int" />
+    <Property Name="EmployeeTypeID" Type="int" />
+    <Property Name="WorkingHours" Type="decimal" Precision="26" Scale="2" />
+    <Property Name="HourlyRate" Type="decimal" Precision="26" Scale="2" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="RoleID" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ResidenceNo" Type="varchar" MaxLength="50" />
+    <Property Name="Street1" Type="varchar" MaxLength="200" />
+    <Property Name="Street2" Type="varchar" MaxLength="200" />
+    <Property Name="Street3" Type="varchar" MaxLength="200" />
+    <Property Name="City" Type="varchar" MaxLength="200" />
+    <Property Name="Contry" Type="varchar" MaxLength="200" />
+    <Property Name="ZibCode" Type="varchar" MaxLength="50" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeContact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="TelephneNo1" Type="varchar" MaxLength="20" />
+    <Property Name="TelephneNo2" Type="varchar" MaxLength="20" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="WebLink" Type="varchar" MaxLength="150" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="JobCosting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="CostElementID" Type="int" />
+    <Property Name="DateOfRecord" Type="datetime" />
+    <Property Name="PVNo" Type="varchar" MaxLength="50" />
+    <Property Name="Payee" Type="varchar" MaxLength="100" />
+    <Property Name="Descriptions" Type="varchar" MaxLength="500" />
+    <Property Name="Cost" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+    <Property Name="Claimable" Type="varchar" MaxLength="5" />
+    <Property Name="RecordBy" Type="int" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <EntityType Name="JobInvoiceDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="InvoiceNumber" Type="varchar" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="POBy" Type="int" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="PaidAmount" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobPaymentsDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="ReceiptNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="Method" Type="varchar" MaxLength="30" />
+    <Property Name="BankTransferRef" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeNumber" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeBank" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeDate" Type="datetime" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="POBy" Type="int" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="PaidAmount" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobPODetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="PONumber" Type="varchar" MaxLength="50" />
+    <Property Name="PODate" Type="datetime" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="POBy" Type="int" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="POAmount" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="BrandID" Type="int" />
+    <Property Name="JobNumber" Type="varchar" MaxLength="50" />
+    <Property Name="JobDescription" Type="varchar" MaxLength="1000" />
+    <Property Name="JobType" Type="varchar" MaxLength="100" />
+    <Property Name="ProceedBy" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Remarks" Type="varchar" MaxLength="1000" />
+    <Property Name="JobStateID" Type="int" />
+    <Property Name="JobActiveDate" Type="datetime" />
+    <Property Name="ToalHoursTaken" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+    <Property Name="ActualCloseDate" Type="datetime" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="JobCreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JobsEstimate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="EstimateNo" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfEstimate" Type="datetime" />
+    <Property Name="CurrencyID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="1000" />
+    <Property Name="AprovedBy" Type="int" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+    <Property Name="CurrancyRate" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+    <Property Name="AmountLKR" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="jobState">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobsTimeRecoding">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ActivityID" Type="int" />
+    <Property Name="Statues" Type="varchar" MaxLength="20" />
+    <Property Name="DateOfRecord" Type="datetime" />
+    <Property Name="TimeTaken" Type="decimal" Precision="26" Scale="2" Nullable="false" />
+    <Property Name="Coments" Type="varchar" MaxLength="500" />
+    <Property Name="dt_lmd" Type="datetime" />
+    <Property Name="modify_By" Type="int" />
+  </EntityType>
+  <Association Name="fk_AsignedJobs_EmployeeID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="AsignedJobs" Type="Self.AsignedJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AsignedJobs">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AsignedJobs_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="AsignedJobs" Type="Self.AsignedJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AsignedJobs">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CompanyRole_DepartmentID">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="CompanyRole" Type="Self.CompanyRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyRole">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CompanyRole_DesignationID">
+    <End Role="Designations" Type="Self.Designations" Multiplicity="0..1" />
+    <End Role="CompanyRole" Type="Self.CompanyRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designations">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyRole">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CostElement_CategoryID">
+    <End Role="CostCategory" Type="Self.CostCategory" Multiplicity="0..1" />
+    <End Role="CostElements" Type="Self.CostElements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CostElements">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerAddress_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CustomerAddress" Type="Self.CustomerAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerAddress">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerBrands_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CustomerBrands" Type="Self.CustomerBrands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerBrands">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerContactInfo_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CustomerContactInfo" Type="Self.CustomerContactInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerContactInfo">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CustomerContactPersons_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CustomerContactPersons" Type="Self.CustomerContactPersons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerContactPersons">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employee_DepartmentID">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employee_DesignationID">
+    <End Role="Designations" Type="Self.Designations" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designations">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employee_EmployeeTypeID">
+    <End Role="EmployeeType" Type="Self.EmployeeType" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmployeeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeAddress_EmployeeID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="EmployeeAddress" Type="Self.EmployeeAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeAddress">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeContact_EmployeeID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="EmployeeContact" Type="Self.EmployeeContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeeContact">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employees_RoleID">
+    <End Role="CompanyRole" Type="Self.CompanyRole" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobCosting_CostElementID">
+    <End Role="CostElements" Type="Self.CostElements" Multiplicity="0..1" />
+    <End Role="JobCosting" Type="Self.JobCosting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostElements">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobCosting">
+        <PropertyRef Name="CostElementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobCosting_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="JobCosting" Type="Self.JobCosting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobCosting">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobInvoiceDetails_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="JobInvoiceDetails" Type="Self.JobInvoiceDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobInvoiceDetails">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobPaymentsDetails_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="JobPaymentsDetails" Type="Self.JobPaymentsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobPaymentsDetails">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobPODetails_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="JobPODetails" Type="Self.JobPODetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobPODetails">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_BrandID">
+    <End Role="CustomerBrands" Type="Self.CustomerBrands" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerBrands">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_jobStateID">
+    <End Role="jobState" Type="Self.jobState" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jobState">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="JobStateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Jobs_ProceedBy">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="ProceedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsEstimate_AprovedBy">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="JobsEstimate" Type="Self.JobsEstimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsEstimate">
+        <PropertyRef Name="AprovedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsEstimate_CurrencyID">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+    <End Role="JobsEstimate" Type="Self.JobsEstimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsEstimate">
+        <PropertyRef Name="CurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsEstimate_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="JobsEstimate" Type="Self.JobsEstimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsEstimate">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsTimeRecoding_ActivityID">
+    <End Role="Activities" Type="Self.Activities" Multiplicity="0..1" />
+    <End Role="JobsTimeRecoding" Type="Self.JobsTimeRecoding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsTimeRecoding">
+        <PropertyRef Name="ActivityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsTimeRecoding_EmployeeID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="JobsTimeRecoding" Type="Self.JobsTimeRecoding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsTimeRecoding">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_JobsTimeRecoding_JobID">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="JobsTimeRecoding" Type="Self.JobsTimeRecoding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobsTimeRecoding">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BBDOIOUModelStoreContainer">
+    <EntitySet Name="Activities" EntityType="Self.Activities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AsignedJobs" EntityType="Self.AsignedJobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyRole" EntityType="Self.CompanyRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostCategory" EntityType="Self.CostCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostElements" EntityType="Self.CostElements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerAddress" EntityType="Self.CustomerAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerBrands" EntityType="Self.CustomerBrands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerContactInfo" EntityType="Self.CustomerContactInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerContactPersons" EntityType="Self.CustomerContactPersons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designations" EntityType="Self.Designations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeAddress" EntityType="Self.EmployeeAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeContact" EntityType="Self.EmployeeContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobCosting" EntityType="Self.JobCosting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobInvoiceDetails" EntityType="Self.JobInvoiceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobPaymentsDetails" EntityType="Self.JobPaymentsDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobPODetails" EntityType="Self.JobPODetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobsEstimate" EntityType="Self.JobsEstimate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jobState" EntityType="Self.jobState" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobsTimeRecoding" EntityType="Self.JobsTimeRecoding" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_AsignedJobs_EmployeeID" Association="Self.fk_AsignedJobs_EmployeeID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="AsignedJobs" EntitySet="AsignedJobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AsignedJobs_JobID" Association="Self.fk_AsignedJobs_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="AsignedJobs" EntitySet="AsignedJobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CompanyRole_DepartmentID" Association="Self.fk_CompanyRole_DepartmentID">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="CompanyRole" EntitySet="CompanyRole" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CompanyRole_DesignationID" Association="Self.fk_CompanyRole_DesignationID">
+      <End Role="Designations" EntitySet="Designations" />
+      <End Role="CompanyRole" EntitySet="CompanyRole" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CostElement_CategoryID" Association="Self.fk_CostElement_CategoryID">
+      <End Role="CostCategory" EntitySet="CostCategory" />
+      <End Role="CostElements" EntitySet="CostElements" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerAddress_CustomerID" Association="Self.fk_CustomerAddress_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerAddress" EntitySet="CustomerAddress" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerBrands_CustomerID" Association="Self.fk_CustomerBrands_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerBrands" EntitySet="CustomerBrands" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerContactInfo_CustomerID" Association="Self.fk_CustomerContactInfo_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerContactInfo" EntitySet="CustomerContactInfo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CustomerContactPersons_CustomerID" Association="Self.fk_CustomerContactPersons_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerContactPersons" EntitySet="CustomerContactPersons" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employee_DepartmentID" Association="Self.fk_Employee_DepartmentID">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employee_DesignationID" Association="Self.fk_Employee_DesignationID">
+      <End Role="Designations" EntitySet="Designations" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employee_EmployeeTypeID" Association="Self.fk_Employee_EmployeeTypeID">
+      <End Role="EmployeeType" EntitySet="EmployeeType" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeAddress_EmployeeID" Association="Self.fk_EmployeeAddress_EmployeeID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeAddress" EntitySet="EmployeeAddress" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeContact_EmployeeID" Association="Self.fk_EmployeeContact_EmployeeID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeContact" EntitySet="EmployeeContact" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employees_RoleID" Association="Self.fk_Employees_RoleID">
+      <End Role="CompanyRole" EntitySet="CompanyRole" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobCosting_CostElementID" Association="Self.fk_JobCosting_CostElementID">
+      <End Role="CostElements" EntitySet="CostElements" />
+      <End Role="JobCosting" EntitySet="JobCosting" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobCosting_JobID" Association="Self.fk_JobCosting_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobCosting" EntitySet="JobCosting" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobInvoiceDetails_JobID" Association="Self.fk_JobInvoiceDetails_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobInvoiceDetails" EntitySet="JobInvoiceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobPaymentsDetails_JobID" Association="Self.fk_JobPaymentsDetails_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobPaymentsDetails" EntitySet="JobPaymentsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobPODetails_JobID" Association="Self.fk_JobPODetails_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobPODetails" EntitySet="JobPODetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_BrandID" Association="Self.fk_Jobs_BrandID">
+      <End Role="CustomerBrands" EntitySet="CustomerBrands" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_CustomerID" Association="Self.fk_Jobs_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_jobStateID" Association="Self.fk_Jobs_jobStateID">
+      <End Role="jobState" EntitySet="jobState" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Jobs_ProceedBy" Association="Self.fk_Jobs_ProceedBy">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsEstimate_AprovedBy" Association="Self.fk_JobsEstimate_AprovedBy">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="JobsEstimate" EntitySet="JobsEstimate" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsEstimate_CurrencyID" Association="Self.fk_JobsEstimate_CurrencyID">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="JobsEstimate" EntitySet="JobsEstimate" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsEstimate_JobID" Association="Self.fk_JobsEstimate_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobsEstimate" EntitySet="JobsEstimate" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsTimeRecoding_ActivityID" Association="Self.fk_JobsTimeRecoding_ActivityID">
+      <End Role="Activities" EntitySet="Activities" />
+      <End Role="JobsTimeRecoding" EntitySet="JobsTimeRecoding" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsTimeRecoding_EmployeeID" Association="Self.fk_JobsTimeRecoding_EmployeeID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="JobsTimeRecoding" EntitySet="JobsTimeRecoding" />
+    </AssociationSet>
+    <AssociationSet Name="fk_JobsTimeRecoding_JobID" Association="Self.fk_JobsTimeRecoding_JobID">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobsTimeRecoding" EntitySet="JobsTimeRecoding" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

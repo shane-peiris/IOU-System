@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BBDOIOUModelStoreContainer" CdmEntityContainer="BBDOIOUEntities">
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Activity">
+        <MappingFragment StoreEntitySet="Activities">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AsignedJobs">
+      <EntityTypeMapping TypeName="BBDOIOUModel.AsignedJob">
+        <MappingFragment StoreEntitySet="AsignedJobs">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+          <ScalarProperty Name="DateofAssigned" ColumnName="DateofAssigned" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyRoles">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CompanyRole">
+        <MappingFragment StoreEntitySet="CompanyRole">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostCategories">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CostCategory">
+        <MappingFragment StoreEntitySet="CostCategory">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostElements">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CostElement">
+        <MappingFragment StoreEntitySet="CostElements">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerAddresses">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CustomerAddress">
+        <MappingFragment StoreEntitySet="CustomerAddress">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street3" ColumnName="Street3" />
+          <ScalarProperty Name="Street2" ColumnName="Street2" />
+          <ScalarProperty Name="Street1" ColumnName="Street1" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerBrands">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CustomerBrand">
+        <MappingFragment StoreEntitySet="CustomerBrands">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerContactInfoes">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CustomerContactInfo">
+        <MappingFragment StoreEntitySet="CustomerContactInfo">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="Telophone2" ColumnName="Telophone2" />
+          <ScalarProperty Name="Telophone1" ColumnName="Telophone1" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerContactPersons">
+      <EntityTypeMapping TypeName="BBDOIOUModel.CustomerContactPerson">
+        <MappingFragment StoreEntitySet="CustomerContactPersons">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telophone1" ColumnName="Telophone1" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="AddressCity" ColumnName="AddressCity" />
+          <ScalarProperty Name="AddressStreet2" ColumnName="AddressStreet2" />
+          <ScalarProperty Name="AddressStreet1" ColumnName="AddressStreet1" />
+          <ScalarProperty Name="AddressNo" ColumnName="AddressNo" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="NBTRegNo" ColumnName="NBTRegNo" />
+          <ScalarProperty Name="VatRegNo" ColumnName="VatRegNo" />
+          <ScalarProperty Name="BusinessRegNo" ColumnName="BusinessRegNo" />
+          <ScalarProperty Name="CreditPeriod" ColumnName="CreditPeriod" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Designation">
+        <MappingFragment StoreEntitySet="Designations">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="HourlyRate" ColumnName="HourlyRate" />
+          <ScalarProperty Name="WorkingHours" ColumnName="WorkingHours" />
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="IDnumber" ColumnName="IDnumber" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="NameWithInitial" ColumnName="NameWithInitial" />
+          <ScalarProperty Name="OtherName" ColumnName="OtherName" />
+          <ScalarProperty Name="SurName" ColumnName="SurName" />
+          <ScalarProperty Name="InitialName" ColumnName="InitialName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EPFNo" ColumnName="EPFNo" />
+          <ScalarProperty Name="EMPNo" ColumnName="EMPNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeAddresses">
+      <EntityTypeMapping TypeName="BBDOIOUModel.EmployeeAddress">
+        <MappingFragment StoreEntitySet="EmployeeAddress">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="ZibCode" ColumnName="ZibCode" />
+          <ScalarProperty Name="Contry" ColumnName="Contry" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street3" ColumnName="Street3" />
+          <ScalarProperty Name="Street2" ColumnName="Street2" />
+          <ScalarProperty Name="Street1" ColumnName="Street1" />
+          <ScalarProperty Name="ResidenceNo" ColumnName="ResidenceNo" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeContacts">
+      <EntityTypeMapping TypeName="BBDOIOUModel.EmployeeContact">
+        <MappingFragment StoreEntitySet="EmployeeContact">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="WebLink" ColumnName="WebLink" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="TelephneNo2" ColumnName="TelephneNo2" />
+          <ScalarProperty Name="TelephneNo1" ColumnName="TelephneNo1" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeTypes">
+      <EntityTypeMapping TypeName="BBDOIOUModel.EmployeeType">
+        <MappingFragment StoreEntitySet="EmployeeType">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobCostings">
+      <EntityTypeMapping TypeName="BBDOIOUModel.JobCosting">
+        <MappingFragment StoreEntitySet="JobCosting">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="RecordBy" ColumnName="RecordBy" />
+          <ScalarProperty Name="Claimable" ColumnName="Claimable" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Payee" ColumnName="Payee" />
+          <ScalarProperty Name="PVNo" ColumnName="PVNo" />
+          <ScalarProperty Name="DateOfRecord" ColumnName="DateOfRecord" />
+          <ScalarProperty Name="CostElementID" ColumnName="CostElementID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobInvoiceDetails">
+      <EntityTypeMapping TypeName="BBDOIOUModel.JobInvoiceDetail">
+        <MappingFragment StoreEntitySet="JobInvoiceDetails">
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="POBy" ColumnName="POBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPaymentsDetails">
+      <EntityTypeMapping TypeName="BBDOIOUModel.JobPaymentsDetail">
+        <MappingFragment StoreEntitySet="JobPaymentsDetails">
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="POBy" ColumnName="POBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="ChequeBank" ColumnName="ChequeBank" />
+          <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+          <ScalarProperty Name="BankTransferRef" ColumnName="BankTransferRef" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPODetails">
+      <EntityTypeMapping TypeName="BBDOIOUModel.JobPODetail">
+        <MappingFragment StoreEntitySet="JobPODetails">
+          <ScalarProperty Name="POAmount" ColumnName="POAmount" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="POBy" ColumnName="POBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="BBDOIOUModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="JobCreateDate" ColumnName="JobCreateDate" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="ActualCloseDate" ColumnName="ActualCloseDate" />
+          <ScalarProperty Name="ToalHoursTaken" ColumnName="ToalHoursTaken" />
+          <ScalarProperty Name="JobActiveDate" ColumnName="JobActiveDate" />
+          <ScalarProperty Name="JobStateID" ColumnName="JobStateID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ProceedBy" ColumnName="ProceedBy" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="JobNumber" ColumnName="JobNumber" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobsEstimates">
+      <EntityTypeMapping TypeName="BBDOIOUModel.JobsEstimate">
+        <MappingFragment StoreEntitySet="JobsEstimate">
+          <ScalarProperty Name="AmountLKR" ColumnName="AmountLKR" />
+          <ScalarProperty Name="CurrancyRate" ColumnName="CurrancyRate" />
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="AprovedBy" ColumnName="AprovedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="DateOfEstimate" ColumnName="DateOfEstimate" />
+          <ScalarProperty Name="EstimateNo" ColumnName="EstimateNo" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jobStates">
+      <EntityTypeMapping TypeName="BBDOIOUModel.jobState">
+        <MappingFragment StoreEntitySet="jobState">
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobsTimeRecodings">
+      <EntityTypeMapping TypeName="BBDOIOUModel.JobsTimeRecoding">
+        <MappingFragment StoreEntitySet="JobsTimeRecoding">
+          <ScalarProperty Name="modify_By" ColumnName="modify_By" />
+          <ScalarProperty Name="dt_lmd" ColumnName="dt_lmd" />
+          <ScalarProperty Name="Coments" ColumnName="Coments" />
+          <ScalarProperty Name="TimeTaken" ColumnName="TimeTaken" />
+          <ScalarProperty Name="DateOfRecord" ColumnName="DateOfRecord" />
+          <ScalarProperty Name="Statues" ColumnName="Statues" />
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
